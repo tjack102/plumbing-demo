@@ -173,7 +173,8 @@
     <!-- 2. HERO SECTION -->
     <section class="relative pt-40 pb-32 lg:pt-48 lg:pb-48 overflow-visible bg-blue-900">
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1627914876800-47b855964f40?q=80&w=2070&auto=format&fit=crop" alt="Plumbing Background" class="w-full h-full object-cover opacity-10 transform scale-110">
+            <!-- UPDATED: Plumber under sink -->
+            <img src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=1200" alt="Plumbing Background" class="w-full h-full object-cover opacity-10 transform scale-110">
             <div class="absolute inset-0 hero-bg-overlay"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -201,7 +202,8 @@
                 </div>
             </div>
             <div class="relative order-1 lg:order-2 h-full flex items-end justify-center lg:justify-end">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Technician" class="relative z-10 w-[85%] lg:w-full max-w-md object-contain transform translate-y-12 lg:translate-y-24 drop-shadow-2xl grayscale-[10%] contrast-110" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
+                <!-- UPDATED: Technician in uniform -->
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200" alt="Technician" class="relative z-10 w-[85%] lg:w-full max-w-md object-contain transform translate-y-12 lg:translate-y-24 drop-shadow-2xl grayscale-[10%] contrast-110" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
                 <div id="review-popup" class="absolute top-10 right-0 lg:-right-8 bg-white text-blue-900 p-4 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-700 z-20 max-w-xs border-l-4 border-green-500 opacity-0 translate-y-4">
                     <div class="relative">
                         <img src="https://randomuser.me/api/portraits/women/32.jpg" class="w-12 h-12 rounded-full border-2 border-white shadow" alt="Reviewer">
@@ -313,7 +315,8 @@
           </div>
           <div class="relative order-1 lg:order-2">
             <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white transform rotate-2 hover:rotate-0 transition-all duration-500">
-              <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070&auto=format&fit=crop" alt="Garrison Plumbing White Service Van" class="w-full h-auto object-cover">
+              <!-- UPDATED: White service van -->
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200" alt="Garrison Plumbing White Service Van" class="w-full h-auto object-cover">
             </div>
             <div class="absolute -bottom-10 -left-10 bg-blue-900 text-white p-8 rounded-2xl shadow-xl z-20 max-w-sm hidden md:block">
               <div class="flex text-yellow-400 mb-4 gap-1">★★★★★</div>
@@ -335,12 +338,12 @@
       <div class="container mx-auto px-4 max-w-6xl">
         <div id="slider-container" class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-800 select-none group">
           <!-- After Image -->
-          <div class="absolute inset-0"><img src="https://lh3.googleusercontent.com/gg-dl/ABS2GSmckAP7CUSXr_1PH66OOgDMrCdmb_XqV63mzHL_gxP4MptI73XGW31qF_U78r_Kv07gOK4sWB45GwEBH8SICce_lgE4ddetk3CcnRtGLjrsaJ27Q3YujSTjO1H57mIyV17c9W1zH5MWmfjfKBfF35UNAcmt4solc8liLqN2goSz2jp8uA=s1024-rj" alt="After" class="w-full h-full object-cover"></div>
+          <div class="absolute inset-0"><img id="after-img" src="" alt="After" class="w-full h-full object-cover"></div>
           <div class="absolute bottom-6 right-6 bg-green-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-bold shadow-lg border border-green-400">AFTER: Permanent ProPress</div>
           
           <!-- Before Image (Clipped) -->
           <div id="before-layer" class="absolute inset-0 overflow-hidden border-r-4 border-white" style="width: 50%;">
-            <img id="before-img" src="https://lh3.googleusercontent.com/gg-dl/ABS2GSkQ5hDHnu5NwtYy29PeFN7oRr3AnUz48Dx9mgBv1ijJmnP29xd0fR-8ORznXJ86fA70sd7geIjZvdkZkPW4-lOWh99FtSkMg1dSzWVefWpp5yOT9GLAiSKfeutEmrUN2VbioSHHc4KULGGZT0QfxlxSSaOO1Q3LFCwTzec15CBeMAMAyg=s1024-rj" alt="Before" class="w-full h-full object-cover max-w-none h-auto">
+            <img id="before-img" src="" alt="Before" class="w-full h-full object-cover max-w-none h-auto">
             <div class="absolute bottom-6 left-6 bg-red-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-bold shadow-lg border border-red-400">BEFORE: Rusted & Leaking</div>
           </div>
           
@@ -458,7 +461,15 @@
             const beforeLayer = document.getElementById('before-layer');
             const handle = document.getElementById('slider-handle');
             const beforeImg = document.getElementById('before-img');
+            const afterImg = document.getElementById('after-img'); // Grab the after image element
             let isDragging = false;
+
+            // UPDATED: Set image sources from new request
+            const BEFORE_IMAGE_URL = "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200";
+            const AFTER_IMAGE_URL = "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200";
+            
+            beforeImg.src = BEFORE_IMAGE_URL;
+            afterImg.src = AFTER_IMAGE_URL;
 
             const updateSlider = (clientX) => {
                 const rect = container.getBoundingClientRect();
